@@ -6,17 +6,19 @@ using std::array;
 #include <string>
 using std::string;
 
-/// Representa um ponto em 2D
-struct Ponto {
-    int x; //!< coordenada x.
-    int y; //!< coordenada y.
-    Ponto( int xi=0, int yi=0 ) : x{xi}, y{yi}
+
+struct PT {
+    int x; 
+    
+    int z; 
+    
+    PT( int xi=0, int zi=0 ) : x{xi}, z{zi}
     {}
 };
 
-/// Tipos de localização do ponto no retângulo.
-enum location_t :int { INSIDE=0, BORDER=1, OUTSIDE=2 };
 
-location_t pt_in_rect( const Ponto&, const Ponto&, const Ponto& );
+enum location_t :int { dentro=0, extremidade=1, fora=2 };
+
+location_t pt_in_rect( const PT&, const PT&, const PT& );
 
 #endif
